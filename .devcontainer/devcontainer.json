@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.154.0/containers/docker-existing-dockerfile
 {
-	"name": "Existing Dockerfile",
+	"name": "Deno on VSCode",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": ".",
@@ -25,8 +25,8 @@
 		"--net=host"
 	],
 	"extensions": [
-		"streetsidesoftware.code-spell-checker",
+		"denoland.vscode-deno",
 		"mosapride.zenkaku",
-		"denoland.vscode-deno"
+		"streetsidesoftware.code-spell-checker"
 	]
 }

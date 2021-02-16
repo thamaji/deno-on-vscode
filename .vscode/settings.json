@@ -22,6 +22,10 @@
     "cSpell.ignorePaths": [
         "**/.git/objects/**",
         ".devcontainer/",
-        ".vscode",
+        ".vscode/",
+        ".cache/deno/"
+    ],
+    "cSpell.words": [
+        "deno"
     ]
 }
