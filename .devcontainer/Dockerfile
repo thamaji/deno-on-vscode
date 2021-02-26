@@ -88,8 +88,9 @@ RUN set -x \
     && unzip -d /usr/local/bin/ /deno.zip \
     && rm -f /deno.zip \
     && /usr/local/bin/deno completions bash > /etc/bash_completion.d/deno
-ARG DENO_DIR="/home/vscode/.cache/deno"
-ENV DENO_DIR="${DENO_DIR}"
+ENV DENO_DIR=/home/vscode/.deno/cache \
+    DENO_INSTALL_ROOT=/home/vscode/.deno \
+    PATH=/home/vscode/.deno/bin:$PATH
 
 USER vscode
 

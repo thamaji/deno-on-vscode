@@ -6,16 +6,15 @@
     "deno.enable": true,
     "deno.unstable": true,
     "deno.lint": true,
-    // "deno.import_intellisense_autodiscovery": true,
-    // "deno.import_intellisense_origins": {
-    //     "https://deno.land": true
-    // },
-    // "deno.import_map": null,
     "[typescript]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2,
         "editor.defaultFormatter": "denoland.vscode-deno",
         "editor.formatOnSave": true
     },
     "[typescriptreact]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2,
         "editor.defaultFormatter": "denoland.vscode-deno",
         "editor.formatOnSave": true
     },

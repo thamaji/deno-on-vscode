@@ -6,8 +6,7 @@
 		"dockerfile": "Dockerfile",
 		"context": ".",
 		"args": {
-			"DENO_VERSION": "v1.7.4",
-			"DENO_DIR": "${containerWorkspaceFolder}/.cache/deno"
+			"DENO_VERSION": "v1.7.4"
 		},
 		"target": "devcontainer"
 	},
@@ -17,7 +16,8 @@
 	"overrideCommand": false,
 	"mounts": [
 		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-		"source=${localWorkspaceFolder}/.devcontainer/.extensions,target=/home/vscode/.vscode-server/extensions,type=bind"
+		"source=${localWorkspaceFolder}/.devcontainer/.extensions,target=/home/vscode/.vscode-server/extensions,type=bind",
+		"source=${localWorkspaceFolder}/.devcontainer/.deno,target=/home/vscode/.deno,type=bind"
 	],
 	"forwardPorts": [],
 	"runArgs": [
