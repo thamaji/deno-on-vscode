@@ -83,7 +83,7 @@ RUN set -x \
     && curl -fsSL -o /etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/1.27.4/contrib/completion/bash/docker-compose"
 
 # deno
-ARG DENO_VERSION=v1.7.4
+ARG DENO_VERSION=v1.7.5
 RUN set -x \
     && curl -fsSL -o /deno.zip "https://github.com/denoland/deno/releases/download/${DENO_VERSION}/deno-x86_64-unknown-linux-gnu.zip" \
     && unzip -d /usr/local/bin/ /deno.zip \
@@ -96,4 +96,4 @@ ENV DENO_DIR=/home/vscode/.deno/cache \
 USER vscode
 
 ADD entrypoint.sh /entrypoint.sh
-ENTRYPOINT [ "bash", "-eux", "/entrypoint.sh" ]
+ENTRYPOINT [ "bash", "-eu", "/entrypoint.sh" ]
