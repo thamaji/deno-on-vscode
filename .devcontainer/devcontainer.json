@@ -6,7 +6,7 @@
 		"dockerfile": "Dockerfile",
 		"context": ".",
 		"args": {
-			"DENO_VERSION": "v1.7.4"
+			"DENO_VERSION": "v1.7.5"
 		},
 		"target": "devcontainer"
 	},
@@ -24,6 +24,9 @@
 		"--init",
 		"--net=host"
 	],
+	"containerEnv": {
+		"LOCAL_WORKSPACE": "${localWorkspaceFolder}"
+	},
 	"extensions": [
 		"denoland.vscode-deno",
 		"mosapride.zenkaku",
