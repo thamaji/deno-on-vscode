@@ -1,8 +1,12 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-    },
     "terminal.integrated.allowChords": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/.devcontainer/.extensions": true,
+        "**/.devcontainer/.deno": true
+    },
+    "files.eol": "\n",
     "deno.enable": true,
     "deno.unstable": true,
     "deno.lint": true,
@@ -10,18 +14,24 @@
         "editor.detectIndentation": false,
         "editor.tabSize": 2,
         "editor.defaultFormatter": "denoland.vscode-deno",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
     "[typescriptreact]": {
         "editor.detectIndentation": false,
         "editor.tabSize": 2,
         "editor.defaultFormatter": "denoland.vscode-deno",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
     "cSpell.ignorePaths": [
         "**/.git/objects/**",
-        ".devcontainer/",
-        ".vscode/"
+        "**/.devcontainer/**",
+        "**/.vscode/**"
     ],
     "cSpell.words": [
         "deno"
