@@ -6,6 +6,7 @@
 		"dockerfile": "Dockerfile",
 		"context": ".",
 		"args": {
+			"COMPOSE_VERSION": "1.27.4",
 			"DENO_VERSION": "v1.7.5"
 		},
 		"target": "devcontainer"
@@ -29,7 +30,22 @@
 	},
 	"extensions": [
 		"denoland.vscode-deno",
-		"mosapride.zenkaku",
+		"jgclark.vscode-todo-highlight",
 		"streetsidesoftware.code-spell-checker"
-	]
+	],
+	"settings": {
+		"terminal.integrated.allowChords": false,
+		"files.exclude": {
+			"**/.devcontainer/.extensions": true,
+			"**/.devcontainer/.deno": true
+		},
+		"files.watcherExclude": {
+			"**/.devcontainer/.extensions": true,
+			"**/.devcontainer/.deno": true
+		},
+		"search.exclude": {
+			"**/.devcontainer/.extensions": true,
+			"**/.devcontainer/.deno": true
+		}
+	}
 }

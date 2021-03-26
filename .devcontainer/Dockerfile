@@ -55,6 +55,7 @@ RUN set -x \
         tar \
         time \
         unzip \
+        xz-utils \
         zip \
     && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
@@ -77,14 +78,24 @@ RUN set -x \
     && usermod -aG docker vscode
 
 # docker compose
+ARG COMPOSE_VERSION=1.27.4
 RUN set -x \
-    && curl -fsSL "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        curl \
+    && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
+    && curl -fsSL "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose \
-    && curl -fsSL -o /etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/1.27.4/contrib/completion/bash/docker-compose"
+    && curl -fsSL -o /etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose"
 
 # deno
 ARG DENO_VERSION=v1.7.5
 RUN set -x \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        curl \
+        unzip \
+    && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
     && curl -fsSL -o /deno.zip "https://github.com/denoland/deno/releases/download/${DENO_VERSION}/deno-x86_64-unknown-linux-gnu.zip" \
     && unzip -d /usr/local/bin/ /deno.zip \
     && rm -f /deno.zip \
