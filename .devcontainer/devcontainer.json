@@ -32,20 +32,5 @@
 		"denoland.vscode-deno",
 		"jgclark.vscode-todo-highlight",
 		"streetsidesoftware.code-spell-checker"
-	],
-	"settings": {
-		"terminal.integrated.allowChords": false,
-		"files.exclude": {
-			"**/.devcontainer/.extensions": true,
-			"**/.devcontainer/.deno": true
-		},
-		"files.watcherExclude": {
-			"**/.devcontainer/.extensions": true,
-			"**/.devcontainer/.deno": true
-		},
-		"search.exclude": {
-			"**/.devcontainer/.extensions": true,
-			"**/.devcontainer/.deno": true
-		}
-	}
+	]
 }

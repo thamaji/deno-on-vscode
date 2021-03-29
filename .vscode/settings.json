@@ -1,4 +1,17 @@
 {
+    "terminal.integrated.allowChords": false,
+    "files.exclude": {
+        "**/.devcontainer/.extensions": true,
+        "**/.devcontainer/.deno": true
+    },
+    "files.watcherExclude": {
+        "**/.devcontainer/.extensions": true,
+        "**/.devcontainer/.deno": true
+    },
+    "search.exclude": {
+        "**/.devcontainer/.extensions": true,
+        "**/.devcontainer/.deno": true
+    },
     "deno.enable": true,
     "deno.unstable": true,
     "deno.lint": true,
