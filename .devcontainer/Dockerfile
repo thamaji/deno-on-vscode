@@ -88,6 +88,15 @@ RUN set -x \
     && chmod +x /usr/local/bin/docker-compose \
     && curl -fsSL -o /etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose"
 
+# docker / docker-compose in devcontainer
+RUN set -x \
+    && mkdir -p /usr/local/devcontainer-tool/bin \
+    && curl -fsSL -o /usr/local/devcontainer-tool/bin/docker https://raw.githubusercontent.com/thamaji/devcontainer-docker/main/docker \
+    && chmod +x /usr/local/devcontainer-tool/bin/docker \
+    && curl -fsSL -o /usr/local/devcontainer-tool/bin/docker-compose https://github.com/thamaji/devcontainer-compose/releases/download/v1.0.0/docker-compose \
+    && chmod +x /usr/local/devcontainer-tool/bin/docker-compose
+ENV PATH=/usr/local/devcontainer-tool/bin:${PATH}
+
 # deno
 ARG DENO_VERSION=v1.7.5
 RUN set -x \
