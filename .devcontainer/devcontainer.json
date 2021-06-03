@@ -7,7 +7,7 @@
 		"context": ".",
 		"args": {
 			"COMPOSE_VERSION": "1.27.4",
-			"DENO_VERSION": "v1.7.5"
+			"DENO_VERSION": "v1.10.3"
 		},
 		"target": "devcontainer"
 	},
@@ -25,10 +25,6 @@
 		"--init",
 		"--net=host"
 	],
-	"containerEnv": {
-		"CONTAINER_WORKSPACE": "${containerWorkspaceFolder}",
-		"LOCAL_WORKSPACE": "${localWorkspaceFolder}"
-	},
 	"extensions": [
 		"denoland.vscode-deno",
 		"jgclark.vscode-todo-highlight",

@@ -12,6 +12,8 @@
         "**/.devcontainer/.extensions": true,
         "**/.devcontainer/.deno": true
     },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
     "deno.enable": true,
     "deno.unstable": true,
     "deno.lint": true,
